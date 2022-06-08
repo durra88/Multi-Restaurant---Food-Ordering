@@ -33,7 +33,7 @@ class RestaurentListScreen extends StatefulWidget {
 class _RestaurentListScreenState extends State<RestaurentListScreen> {
    @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (widget.box.hasData(MY_CART_KEY)) {
         var cartSave = await widget.box.read(MY_CART_KEY) as String;
         if (cartSave.length > 0 && cartSave.isNotEmpty) {

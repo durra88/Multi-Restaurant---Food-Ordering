@@ -39,12 +39,13 @@ class OrderViewDetailScreen extends StatelessWidget {
               flex: 2,
               child: Padding(
                 padding: EdgeInsets.all(8),
-                child: Column(children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
+                child: SizedBox(
+                  //height: 800,
+                  child: Column(children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -53,7 +54,7 @@ class OrderViewDetailScreen extends StatelessWidget {
                                   fontSize: 20, fontWeight: FontWeight.w900),
                             ),
                             Text(
-                              '${orderModel.shippingAddress!}',
+                              '${orderModel.shippingAddress}',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -67,89 +68,105 @@ class OrderViewDetailScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Chip(
-                              backgroundColor: chipBackgroundColor,
-                              label: Text(
-                                '${convertStatus(orderModel.orderStatus!)}',
-                                style: TextStyle(color: chipForegroundColor),
-                              ),
-                            )
-                          ],
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Chip(
+                                backgroundColor: chipBackgroundColor,
+                                label: Text(
+                                  '${convertStatus(orderModel.orderStatus!)}',
+                                  style: TextStyle(color: chipForegroundColor),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
+                      ],
+                    ),
+                    Divider(
+                      thickness: 1,
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              totalText,
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.grey),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              '${noSymbolUSFormat.format(orderModel.totalPayment!)}',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.grey),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        totalText,
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.grey),
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              discountText,
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.grey),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              '${orderModel.discount!}%',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.grey),
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        '${noSymbolUSFormat.format(orderModel.totalPayment!)}',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.grey),
+                    ),
+                    Divider(
+                      thickness: 1,
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            finalText,
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black),
+                          ),
+                          Expanded(
+                            child: Text(
+                              '\$${noSymbolUSFormat.format(orderModel.finalPayment!)}',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        discountText,
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.grey),
-                      ),
-                      Text(
-                        '${orderModel.discount!}%',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        finalText,
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black),
-                      ),
-                      Text(
-                        '\$${noSymbolUSFormat.format(orderModel.finalPayment!)}',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ]),
+                    ),
+                  ]),
+                ),
               ),
             ),
             SizedBox(
@@ -157,43 +174,50 @@ class OrderViewDetailScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 5,
-              child: ListView.builder(
-                  itemCount: orderModel.cartItemList!.length,
-                  itemBuilder: (context, index) {
-                    var sizeText =
-                        orderModel.cartItemList![index].size!.length > 0
-                            ? orderModel.cartItemList![index].size![0].name!
-                            : "";
-                    var addonText =
-                        orderModel.cartItemList![index].addon!.length > 0
-                            ? convertAddonToText(
-                                orderModel.cartItemList![index].addon!)
-                            : "";
-                    var infoText =
-                        "quantity:${orderModel.cartItemList![index].quantity!}";
-                    if (sizeText.length > 0) infoText += "\nSize: $sizeText";
-                    if (addonText.length > 0) infoText += "\nSize: $addonText";
-                    return Card(
-                      elevation: 8.0,
-                      child: ListTile(
-                        title: Text(orderModel.cartItemList![index].name!),
-                        leading: CachedNetworkImage(
-                          imageUrl: orderModel.cartItemList![index].image!,
-                          imageBuilder: (context, provider) => CircleAvatar(
-                            backgroundImage: provider,
+              child: SizedBox(
+                height: 200,
+                child: ListView.builder(
+                    itemCount: orderModel.cartItemList!.length,
+                    itemBuilder: (context, index) {
+                      var sizeText =
+                          orderModel.cartItemList![index].size!.length > 0
+                              ? orderModel.cartItemList![index].size![0].name!
+                              : "";
+                      var addonText =
+                          orderModel.cartItemList![index].addon!.length > 0
+                              ? convertAddonToText(
+                                  orderModel.cartItemList![index].addon!)
+                              : "";
+                      var infoText =
+                          "quantity:${orderModel.cartItemList![index].quantity!}";
+                      if (sizeText.length > 0) infoText += "\nSize: $sizeText";
+                      if (addonText.length > 0)
+                        infoText += "\nSize: $addonText";
+                      return Card(
+                        elevation: 8.0,
+                        child: ListTile(
+                          title: Text(orderModel.cartItemList![index].name!),
+                          leading: SizedBox(
+                            height: 200,
+                            child: CachedNetworkImage(
+                              imageUrl: orderModel.cartItemList![index].image!,
+                              imageBuilder: (context, provider) => CircleAvatar(
+                                backgroundImage: provider,
+                              ),
+                              placeholder: (context, url) => Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                              errorWidget: (context, url, err) => Center(
+                                child: Icon(Icons.image),
+                              ),
+                            ),
                           ),
-                          placeholder: (context, url) => Center(
-                            child: CircularProgressIndicator(),
-                          ),
-                          errorWidget: (context, url, err) => Center(
-                            child: Icon(Icons.image),
-                          ),
+                          isThreeLine: true,
+                          subtitle: Text('$infoText'),
                         ),
-                        isThreeLine: true,
-                        subtitle: Text('$infoText'),
-                      ),
-                    );
-                  }),
+                      );
+                    }),
+              ),
             )
           ],
         ),

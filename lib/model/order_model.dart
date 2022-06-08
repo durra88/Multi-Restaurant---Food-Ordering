@@ -8,7 +8,10 @@ class OrderModel {
       comment = '',
       orderNumber = '',
       restaurantId = '';
-  double? totalPayment = 0.0, finalPayment = 0.0, shippingCost = 0.0, discount = 0.0;
+  double? totalPayment = 0.0,
+      finalPayment = 0.0,
+      shippingCost = 0.0,
+      discount = 0.0;
   bool? isCod = false;
   List<CartModel>? cartItemList = List<CartModel>.empty(growable: true);
   int? orderStatus = 0, createdDate = 0;
@@ -33,14 +36,17 @@ class OrderModel {
     userId = json['userId'];
     userName = json['userName'];
     userPhone = json['userPhone'];
-    shippingAddress = json['shippingAddress'];
+    shippingAddress =
+        json['shippingAddress'] == null ? "" : json['shippingAddress'];
     comment = json['comment'];
     orderNumber = json['orderNumber'];
     restaurantId = json['restaurantId'];
     totalPayment = double.parse(json['totalPayment'].toString());
     finalPayment = double.parse(json['finalPayment'].toString());
-    shippingCost = double.parse(json['shippingCost'].toString());
-    discount = double.parse(json['discount']);
+    shippingCost = json['shippingCost'] == null
+        ? 0.0
+        : double.parse(json['shippingCost'].toString());
+    discount = double.parse(json['discount'].toString());
     isCod = json['isCod'] as bool;
     if (json['cartItemList'] != null) {
       json['cartItemList'].forEach((v) {
@@ -49,7 +55,7 @@ class OrderModel {
     }
     // cartItemList = json['cartItemList']??[];
     orderStatus = int.parse(json['orderStatus'].toString());
-    createdDate = int.parse(json['createdDate'].toString());
+    createdDate = json['createdDate'] == null ? 0 : json['createdDate'];
   }
   Map<dynamic, dynamic> toJson() {
     final data = Map<String, dynamic>();
@@ -65,7 +71,7 @@ class OrderModel {
     data['shippingCost'] = this.shippingCost;
     data['discount'] = this.discount;
     data['isCod'] = this.isCod;
-    data['cartItemList'] =this.cartItemList!.map((v) => v.toJson()).toList();
+    data['cartItemList'] = this.cartItemList!.map((v) => v.toJson()).toList();
     data['orderStatus'] = this.orderStatus;
     data['createdDate'] = this.createdDate;
 

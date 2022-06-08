@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:order_food/state/cart_state.dart';
+import 'package:order_food/state/main_state.dart';
+import 'package:order_food/strings/cart_string.dart';
+import 'package:order_food/utils/utils.dart';
+import 'package:order_food/widget/cart/cart_total_item_widget.dart';
+
+class TotalWidget extends StatelessWidget {
+  final MainStateController mainStateController = Get.find();
+  final CartStateController controller;
+  TotalWidget({Key? key, required this.controller}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 12,
+      child: Padding(
+        padding: EdgeInsets.all(8),
+        child: Column(
+          children: [
+            TotalItemWidget(
+                text: totalText,
+                value: currencyFormat.format(controller.sumCart(
+                    mainStateController
+                        .selectedRestaurant.value.restaurantId!)),
+                isSubTotal: false),
+          ],
+        ),
+      ),
+    );
+  }
+}

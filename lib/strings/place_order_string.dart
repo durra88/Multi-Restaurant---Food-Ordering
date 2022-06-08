@@ -1,0 +1,15 @@
+const placeOrderText = 'Place Order';
+const firstNameText = 'First Name';
+const lastNameText = 'Last Name';
+const addressText = 'Address';
+const paymentText = 'Payment';
+const codText = 'Cash on Delivery';
+const braintreeText = 'BrainTree';
+const commentText = 'Comment';
+const isRequiredText = 'is required';
+const orderSuccessText = 'Order Success';
+const orderFailedText = 'Order Faild';
+const orderSuccessMessageText = 'Your order has been placed';
+const orderFaildMessageText = 'Your order submit failed';
+const COD_VAL = 'COD';
+const BRAINTREE_VAL = 'Brantree';

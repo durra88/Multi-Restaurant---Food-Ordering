@@ -3,17 +3,17 @@
 Flutter  app that  contain the Following :<br><br>
 
 <ul>
-<li>1- List of restaurants<li><br>
-2- est Deal.<br>
-3- ategories item.<br>
-4- ood list<br>
-5-Food details<br>
-6-Add food to cart<br>
-7-Checkout.<br>
-8-Order histories.<br>
-9-Filter order status.<br>
-10-Log in and logout.<br>
-11-Firebase Authantication.<br><br>
+<li> List of restaurants</li><br>
+<li> Best Deal.</li><br>
+<li> Categories item.</li><br>
+<li> Food list.</li><br>
+<li>Food details.</li><br>
+<li>Add food to cart.</li><br>
+<li>Checkout.</li><br>
+<li>Order histories.</li><br>
+<li>Filter order status.</li><br>
+<li>Log in and logout.</li><br>
+<li>Firebase Authantication.</li><br><br>
   </ul>
 
 <i>State Management used:</i><><br><br>

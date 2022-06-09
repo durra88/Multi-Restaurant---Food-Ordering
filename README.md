@@ -1,17 +1,20 @@
 # order_food
 
 Flutter  app that  contain the Following :<br><br>
-1- List of restaurants<br>
-2- Best Deal.<br>
-3- Categories item.<br>
-4- Food list<br>
-5- Food details<br>
-6- Add food to cart<br>
-7- Ccheckout.<br>
-8- Order histories.<br>
+
+<ul>
+<li>1- List of restaurants<li><br>
+2- est Deal.<br>
+3- ategories item.<br>
+4- ood list<br>
+5-Food details<br>
+6-Add food to cart<br>
+7-Checkout.<br>
+8-Order histories.<br>
 9-Filter order status.<br>
 10-Log in and logout.<br>
 11-Firebase Authantication.<br><br>
+  </ul>
 
 <i>State Management used:</i><><br><br>
 1-Getx State Management.<br><br>

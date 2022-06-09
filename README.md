@@ -17,10 +17,11 @@ Flutter  app that  contain the Following :<br><br>
   </ul>
 
 <i> State Management:</i><><br><br>
-  </ul><li> Getx .<br>  </li></ul>
-![maxresdefault](https://user-images.githubusercontent.com/31691963/172836877-00bd7dd2-2681-422d-94c2-182274c75ec1.jpg)
+  </ul><li> Getx.<br>  </li></ul>
 
-<i>Backend:</i><><br><br>
+![maxresdefault](https://user-images.githubusercontent.com/31691963/172844958-8c62d8c2-256c-44e8-802d-a23bbb8d2515.jpg)
+
+<i>Backend:</i><br><br>
 1-Realtime Firebase.<br><br>
 ![images](https://user-images.githubusercontent.com/31691963/172837266-dbd185a7-d51a-4ee5-b1c8-9fe26d2a5700.jpg)
 

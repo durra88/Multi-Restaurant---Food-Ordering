@@ -1,5 +1,7 @@
 # Multi Restaurant - Food Ordering Restaurant
-
+<p> A flutter app that allows you to order food delivery from muti restaurant.You can choose from a huge variety of cuisines and 
+  get your favorite meals faster with quick and easy ordering,  in addition the feature of  order status tracking.
+</p>
 <h3> Flutter  app that  contains the Following :</h3> 
 
 <ul>

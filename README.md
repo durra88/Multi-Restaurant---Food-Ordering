@@ -1,16 +1,14 @@
 # order_food
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+flutter  app that  contain the Following :
+1- List of restaurants 
+2- Best Deal.
+3- Categories item.
+4- Food list
+5- Food details
+6- Add food to cart
+7- Ccheckout.
+8- Order histories.
+9-Filter order status
+10- Log in and logout
+11 -Firebase Authantication.

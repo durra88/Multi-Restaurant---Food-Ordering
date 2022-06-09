@@ -1,4 +1,4 @@
-# Order_food
+# Multi Restaurant - Food Ordering Restaurant
 
 <h3> Flutter  app that  contains the Following :</h3> 
 
@@ -11,13 +11,19 @@
 <li>Add food to cart.</li>
 <li>Checkout.</li>
 <li>Order histories.</li>
-<li>Filter order status.</li>
-<li>Log in and logout.</li>
+<li>Filter order status(Canceled, onProcess, Completed).</li>
+<li>Login[Mobile Phone Verification] and logout.</li>
 <li>Firebase Authantication.</li>
   </ul>
-
+<i><h3> The Code Are :</h3> </i>
+ 
+  </ul><li>Clean Code<br>  </li></ul>
+  </ul><li>Solid Principle   </li></ul>
+  </ul><li>Design Pattern(MVVM)<br>  </li></ul>
+  
+  
 <i><h3> State Management:</h3> </i>
-  </ul><li> Getx.<br>  </li></ul>
+  </ul><li> Getx.  </li></ul>
 ![maxresdefault](https://user-images.githubusercontent.com/31691963/172849087-9e5a63b8-6a04-4eec-a881-785ed3853298.jpg)
 
 

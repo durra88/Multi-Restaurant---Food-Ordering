@@ -18,7 +18,8 @@
 
 <i><h3> State Management:</h3> </i>
   </ul><li> Getx.<br>  </li></ul>
-![maxresdefault](https://user-images.githubusercontent.com/31691963/172844958-8c62d8c2-256c-44e8-802d-a23bbb8d2515.jpg)
+![maxresdefault](https://user-images.githubusercontent.com/31691963/172849087-9e5a63b8-6a04-4eec-a881-785ed3853298.jpg)
+
 
 <i><h3> Backend:</h3> </i>
 Realtime Firebase.<br><br>

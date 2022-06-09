@@ -16,7 +16,7 @@ Flutter  app that  contain the Following :<br><br>
 <li>Firebase Authantication.</li><br><br>
   </ul>
 
-<i>State Management used:</i><><br><br>
+<i> State Management used:</i><><br><br>
 1-Getx State Management.<br><br>
 ![maxresdefault](https://user-images.githubusercontent.com/31691963/172836877-00bd7dd2-2681-422d-94c2-182274c75ec1.jpg)
 

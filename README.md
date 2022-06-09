@@ -27,20 +27,21 @@ Realtime Firebase.<br><br>
 
 
 <i>Dependencies used:</i><br><br>
-  1-cupertino_icons.<br>
-  2-google_fonts.<br>
-  3-cached_network_image.<br> 
-  4-firebase_core.<br>
-  5-firebase_database.<br>
-  6-http.<br>
-  7-auto_animated.<br>
-  8-get.<br>
-  9-carousel_slider.<br>
- 10-flutter_zoom_drawer.<br>
- 11-flutter_elegant_number_button.<br>
- 12-flutter_rating_bar.<br>
- 13-badges.<br>
- 14-get_storage.<br>
- 15-intl.<br>
- 16-flutter_slidable.<br>
- 17-firebase_auth.<br>
+ <ol> <li>cupertino_icons.<br>
+  <li>google_fonts.</li><br>
+  <li>cached_network_image.</li><br> 
+ <li>firebase_core.</li><br>
+  <li>firebase_database.</li><br>
+  <li>http.</li><br>
+ <li>auto_animated.</li><br>
+  <li>get.</li><br>
+ <li>carousel_slider.</li><br>
+ <li>flutter_zoom_drawer.</li><br>
+ <li>flutter_elegant_number_button.</li><br>
+ <li>flutter_rating_bar.</li><br>
+ <li>badges.</li><br>
+ <li>get_storage.</li><br>
+ <li>intl.</li><br>
+ <li>flutter_slidable.</li><br>
+ <li>firebase_auth.</li><br>
+</ol>

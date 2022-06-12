@@ -1,15 +1,18 @@
+import 'dart:developer';
+
 import 'package:auto_animated/auto_animated.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/category_model.dart';
-import 'package:order_food/state/category_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/view_model/catgory_vm/category_viewmodel_imp.dart';
-import 'package:order_food/widget/common/appbar_with_cart_widget.dart';
-import 'package:order_food/widget/common/common_widgets.dart';
+
+import '../const/const.dart';
+import '../model/category_model.dart';
+import '../state/category_state.dart';
+import '../state/main_state.dart';
+import '../view_model/catgory_vm/category_viewmodel_imp.dart';
+import '../widget/common/appbar_with_cart_widget.dart';
+import '../widget/common/common_widgets.dart';
 import 'food_list.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -28,6 +31,13 @@ class CategoryScreen extends StatelessWidget {
         future: viewModel.displayCategoryByRestaurntId(
             mainStateController.selectedRestaurant.value.restaurantId!),
         builder: (context, snapshot) {
+          log("category----------${snapshot.toString()}");
+
+          // if (snapshot.data == null)
+          //   return Center(
+          //     child: Text("empty"),
+          //   );
+
           if (snapshot.connectionState == ConnectionState.waiting)
             return Center(
               child: CircularProgressIndicator(),

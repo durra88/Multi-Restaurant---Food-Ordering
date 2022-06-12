@@ -3,11 +3,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/category_model.dart';
-import 'package:order_food/screens/food_list.dart';
-import 'package:order_food/state/category_state.dart';
-import 'package:order_food/widget/common/common_widgets.dart';
+
+import '../../const/const.dart';
+import '../../model/category_model.dart';
+import '../../screens/food_list.dart';
+import '../../state/category_state.dart';
+import '../common/common_widgets.dart';
 
 class CategoryListWidget extends StatelessWidget {
   final List<CategoryModel> lst;

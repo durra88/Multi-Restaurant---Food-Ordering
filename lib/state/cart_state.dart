@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:order_food/model/cart_model.dart';
-import 'package:order_food/model/food_model.dart';
-import 'package:order_food/strings/cart_string.dart';
-import 'package:order_food/utils/const.dart';
+import '../model/cart_model.dart';
+import '../model/food_model.dart';
+import '../strings/cart_string.dart';
+import '../utils/const.dart';
 
 class CartStateController extends GetxController {
   var cart = List<CartModel>.empty(growable: true).obs;
@@ -65,7 +65,7 @@ class CartStateController extends GetxController {
   sumCart(String restaurantId) => getCart(restaurantId).length == 0
       ? 0
       : cart
-          .map((e) => e.price! * e.quantity!)
+          .map((e) => e.price* e.quantity!)
           .reduce((value, element) => value + element);
 
   getQuantity(String restaurantId) => getCart(restaurantId).length == 0

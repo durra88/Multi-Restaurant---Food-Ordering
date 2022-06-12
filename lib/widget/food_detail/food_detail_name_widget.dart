@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_elegant_number_button/flutter_elegant_number_button.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/state/food_detail_state.dart';
-import 'package:order_food/state/food_list_state.dart';
+import '../../state/food_detail_state.dart';
+import '../../state/food_list_state.dart';
 
 class FoodDetailNameWidget extends StatelessWidget {
   final FoodListStateController foodListStateController;

@@ -1,5 +1,6 @@
-import 'package:get/get.dart'; 
-import 'package:order_food/model/restaurent_model.dart';
+import 'package:get/get.dart';
+
+import '../model/restaurent_model.dart';
 
 class MainStateController extends GetxController {
   var selectedRestaurant = RestaurantModel(

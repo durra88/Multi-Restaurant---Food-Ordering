@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:order_food/model/food_model.dart';
+import '../model/food_model.dart';
 class FoodListStateController extends GetxController {
   var selectedFood = FoodModel(
       description: 'description',

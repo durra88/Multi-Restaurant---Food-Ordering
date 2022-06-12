@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:order_food/firebase/order_reference.dart';
-import 'package:order_food/firebase/server_time_offset_reference.dart';
-import 'package:order_food/model/order_model.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/utils/utils.dart';
-import 'package:order_food/view_model/process_order_vm/process_order_viewModel.dart';
+import '../../firebase/order_reference.dart';
+import '../../firebase/server_time_offset_reference.dart';
+import '../../model/order_model.dart';
+import '../../state/cart_state.dart';
+import '../../utils/utils.dart';
+import 'process_order_viewModel.dart';
 
 class ProcessOrderViewModelImp extends ProcessOrderViewModel {
   @override

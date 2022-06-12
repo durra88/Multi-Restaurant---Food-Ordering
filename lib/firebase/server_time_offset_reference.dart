@@ -7,8 +7,8 @@ Future<int> getServerTimeOffset() async {
       .ref()
       .child('.info/serverTimeOffset')
       .once();
-  var snapshot=source.snapshot;
-  offset = snapshot.value as int ;
+  var snapshot = source.snapshot;
+  offset = snapshot.value as int;
   int estimatedServerTimeInMS = DateTime.now().millisecondsSinceEpoch + offset;
   return estimatedServerTimeInMS;
 }

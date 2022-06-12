@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/food_detail_state.dart';
-import 'package:order_food/state/food_list_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/utils/utils.dart';
+import '../../const/const.dart';
+import '../../state/cart_state.dart';
+import '../../state/food_detail_state.dart';
+import '../../state/food_list_state.dart';
+import '../../state/main_state.dart';
+import '../../utils/utils.dart';
 
 class FoodDetailImageWidget extends StatelessWidget {
   final FoodListStateController foodListStateController;

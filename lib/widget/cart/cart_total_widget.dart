@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/cart_string.dart';
-import 'package:order_food/utils/utils.dart';
-import 'package:order_food/widget/cart/cart_total_item_widget.dart';
+
+import '../../state/cart_state.dart';
+import '../../state/main_state.dart';
+import '../../strings/cart_string.dart';
+import '../../utils/utils.dart';
+import 'cart_total_item_widget.dart';
 
 class TotalWidget extends StatelessWidget {
   final MainStateController mainStateController = Get.find();

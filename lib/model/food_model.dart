@@ -3,7 +3,7 @@ import 'size_model.dart';
 
 class FoodModel {
   String? description = '', id = '', name = '', image = '';
-  int? price = 0;
+  double price = 0.0;
   List<SizeModel>? size = List<SizeModel>.empty(growable: true);
   List<AddonModel>? addon = List<AddonModel>.empty(growable: true);
 
@@ -17,10 +17,14 @@ class FoodModel {
       required this.addon});
 
   FoodModel.fromJson(Map<String, dynamic> json) {
+    // print(
+    //     "******************************************print here**${json['price'].toString()}");
+
     id = json['id'];
     name = json['name'];
     image = json['image'];
-    price = json['price'];
+    //price = double.parse(json['price'].toString());
+    price = tranferNumberInToDouble(json['price']);
     description = json['description'];
     if (json['addon'] != null) {
       addon = List<AddonModel>.empty(growable: true);
@@ -46,5 +50,12 @@ class FoodModel {
     data['size'] = this.size!.map((v) => v.toJson()).toList();
     data['addon'] = this.addon!.map((v) => v.toJson()).toList();
     return data;
+  }
+
+  double tranferNumberInToDouble(var num) {
+    if (num is int) {
+      return double.parse(num.toString());
+    }
+    return num;
   }
 }

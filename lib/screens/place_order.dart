@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/screens/restaurant_home.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/state/place_order_state.dart';
-import 'package:order_food/strings/cart_string.dart';
-import 'package:order_food/strings/place_order_string.dart';
-import 'package:order_food/view_model/process_order_vm/process_order_viewModel_imp.dart';
+import 'restaurant_home.dart';
+import '../state/cart_state.dart';
+import '../state/main_state.dart';
+import '../state/place_order_state.dart';
+import '../strings/cart_string.dart';
+import '../strings/place_order_string.dart';
+import '../view_model/process_order_vm/process_order_viewModel_imp.dart';
 
 class PlaceOrderScreen extends StatelessWidget {
   final placeOrderState = Get.put(PlaceOrderController());

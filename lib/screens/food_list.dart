@@ -3,14 +3,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/category_state.dart';
-import 'package:order_food/state/food_list_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/food_list_string.dart';
-import 'package:order_food/widget/common/appbar_with_cart_widget.dart';
-import 'package:order_food/widget/common/common_widgets.dart';
+
+import '../const/const.dart';
+import '../state/cart_state.dart';
+import '../state/category_state.dart';
+import '../state/food_list_state.dart';
+import '../state/main_state.dart';
+import '../strings/food_list_string.dart';
+import '../widget/common/appbar_with_cart_widget.dart';
+import '../widget/common/common_widgets.dart';
 import 'food_detail.dart';
 
 class FoodListScreen extends StatelessWidget {

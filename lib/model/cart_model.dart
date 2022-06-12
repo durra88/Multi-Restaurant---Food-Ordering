@@ -1,4 +1,4 @@
-import 'package:order_food/model/food_model.dart';
+import 'food_model.dart';
 
 class CartModel extends FoodModel {
   int? quantity = 0;

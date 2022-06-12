@@ -1,14 +1,12 @@
 import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/model/popular_item_model.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/view_model/restaurant_home_detail_vm/restaurant_home_detail_vm.dart';
+import '../../model/popular_item_model.dart';
+import '../../state/main_state.dart';
+import '../../view_model/restaurant_home_detail_vm/restaurant_home_detail_vm.dart';
 
 class BestDealsWidget extends StatelessWidget {
   final RestaurantHomeDetailViewModel viewModel;

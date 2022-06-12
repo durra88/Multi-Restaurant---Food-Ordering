@@ -1,19 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_elegant_number_button/flutter_elegant_number_button.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/size_model.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/category_state.dart';
-import 'package:order_food/state/food_detail_state.dart';
-import 'package:order_food/state/food_list_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/food_detail_string.dart';
-import 'package:order_food/utils/utils.dart';
+import '../const/const.dart';
+import '../model/size_model.dart';
+import '../state/cart_state.dart';
+import '../state/category_state.dart';
+import '../state/food_detail_state.dart';
+import '../state/food_list_state.dart';
+import '../state/main_state.dart';
+import '../strings/food_detail_string.dart';
+import '../utils/utils.dart';
 
 class FoodDetailScreen extends StatelessWidget {
   final CategoryStateController categoryStateController = Get.find();

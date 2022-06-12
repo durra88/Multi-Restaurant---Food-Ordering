@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/order_model.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/main_strings.dart';
-import 'package:order_food/view_model/order_history_vm/order_history_view_model_imp.dart';
-import 'package:order_food/widget/order_history/order_history_list_widget.dart';
 
+import '../const/const.dart';
+import '../state/main_state.dart';
+import '../strings/main_strings.dart';
+import '../view_model/order_history_vm/order_history_view_model_imp.dart';
 import '../widget/order_history/order_history_widget.dart';
 
 class OrderHistoryScreen extends StatelessWidget {

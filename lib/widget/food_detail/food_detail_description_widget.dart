@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/state/food_list_state.dart';
+import '../../state/food_list_state.dart';
 
 class FoodDetailDescriptionWidget extends StatelessWidget {
   final FoodListStateController foodListStateController;

@@ -1,14 +1,16 @@
+import 'dart:developer';
+
 import 'package:auto_animated/auto_animated.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/order_model.dart';
-import 'package:order_food/screens/order_view_detail.dart';
-import 'package:order_food/state/order_history_state.dart';
-import 'package:order_food/utils/utils.dart';
-import 'package:order_food/widget/common/common_widgets.dart';
+import '../../const/const.dart';
+import '../../model/order_model.dart';
+import '../../screens/order_view_detail.dart';
+import '../../state/order_history_state.dart';
+import '../../utils/utils.dart';
+import '../common/common_widgets.dart';
 
 class OrderHistoryListWidget extends StatelessWidget {
   final List<OrderModel> listOrder;
@@ -31,8 +33,8 @@ class OrderHistoryListWidget extends StatelessWidget {
           itemCount: listOrder.length,
           itemBuilder: animationItemBuilder((index) => InkWell(
                 onTap: () {
-                  print("000***************************************************${listOrder.toString().length}");
-
+                 // print("000***************************************************${listOrder.toString().length}");
+             log('Order ${listOrder[index].orderNumber}');
                   orderHistoryController.selectedOrder.value = listOrder[index];
                   Get.to(() => OrderViewDetailScreen());
                 },

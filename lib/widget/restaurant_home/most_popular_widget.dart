@@ -1,12 +1,12 @@
 import 'package:auto_animated/auto_animated.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/model/popular_item_model.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/restaurant_home_string.dart';
-import 'package:order_food/view_model/restaurant_home_detail_vm/restaurant_home_detail_vm.dart';
-import 'package:order_food/widget/common/common_widgets.dart';
+
+import '../../model/popular_item_model.dart';
+import '../../state/main_state.dart';
+import '../../strings/restaurant_home_string.dart';
+import '../../view_model/restaurant_home_detail_vm/restaurant_home_detail_vm.dart';
+import '../common/common_widgets.dart';
 
 class MostPopularWidget extends StatelessWidget {
   final MainStateController mainStateController;

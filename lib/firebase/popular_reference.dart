@@ -1,8 +1,8 @@
 import 'dart:convert' as html;
 import 'dart:convert';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/popular_item_model.dart';
+import '../const/const.dart';
+import '../model/popular_item_model.dart';
 
 
 Future<List<PopularItemModel>> getMostPopularByRestaurntId(

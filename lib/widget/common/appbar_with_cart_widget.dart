@@ -1,11 +1,11 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/screens/cart.dart';
-import 'package:order_food/state/cart_state.dart';
 import 'package:get/get.dart';
-import 'package:order_food/state/main_state.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../screens/cart.dart';
+import '../../state/cart_state.dart';
+import '../../state/main_state.dart';
 
 class AppBarWithCartButton extends StatelessWidget
     implements PreferredSizeWidget {

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/model/size_model.dart';
-import 'package:order_food/state/food_detail_state.dart';
-import 'package:order_food/state/food_list_state.dart';
-import 'package:order_food/strings/food_detail_string.dart';
+
+import '../../model/size_model.dart';
+import '../../state/food_detail_state.dart';
+import '../../state/food_list_state.dart';
+import '../../strings/food_detail_string.dart';
 
 class FoodDetailSizeWidget extends StatelessWidget {
   final FoodDetailStateController foodDetailStateController;

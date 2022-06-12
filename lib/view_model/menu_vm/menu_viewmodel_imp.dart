@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_ui/flutter_auth_ui.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:order_food/screens/cart.dart';
-import 'package:order_food/screens/category.dart';
-import 'package:order_food/screens/order_history.dart';
-import 'package:order_food/screens/restaurant_home.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/main_strings.dart';
-import 'package:order_food/utils/const.dart';
-import 'package:order_food/view_model/menu_vm/menu_viewmodel.dart';
+import '../../screens/cart.dart';
+import '../../screens/category.dart';
+import '../../screens/order_history.dart';
+import '../../screens/restaurant_home.dart';
+import '../../state/cart_state.dart';
+import '../../state/main_state.dart';
+import '../../strings/main_strings.dart';
+import '../../utils/const.dart';
+import 'menu_viewmodel.dart';
 
 class MenuViewModelImp implements MenuViewModel {
   final cartStateController = Get.put(CartStateController());

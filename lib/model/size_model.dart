@@ -4,7 +4,7 @@ class SizeModel {
   SizeModel({required this.name, required this.price});
   SizeModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
-    price = double.parse(json['price'].toString());
+    price =  double.parse(json['price'].toString());
   }
   Map<String, dynamic> toJson() {
     final data = Map<String, dynamic>();

@@ -1,7 +1,7 @@
-import 'package:order_food/firebase/best_deal_reference.dart';
-import 'package:order_food/firebase/popular_reference.dart';
-import 'package:order_food/model/popular_item_model.dart';
-import 'package:order_food/view_model/restaurant_home_detail_vm/restaurant_home_detail_vm.dart';
+import '../../firebase/best_deal_reference.dart';
+import '../../firebase/popular_reference.dart';
+import '../../model/popular_item_model.dart';
+import 'restaurant_home_detail_vm.dart';
 
 class RestaurantHomeDetailViewModelImp implements RestaurantHomeDetailViewModel {
   @override

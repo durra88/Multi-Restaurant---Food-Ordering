@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/strings/main_strings.dart';
-import 'package:order_food/strings/restaurant_home_string.dart';
-import 'package:order_food/view_model/menu_vm/menu_viewmodel_imp.dart';
 
+import '../const/const.dart';
+import '../strings/main_strings.dart';
+import '../strings/restaurant_home_string.dart';
+import '../view_model/menu_vm/menu_viewmodel_imp.dart';
 import 'order_history.dart';
 
 class MenuScreen extends StatelessWidget {

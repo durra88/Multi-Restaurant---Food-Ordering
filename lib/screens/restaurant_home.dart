@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:order_food/screens/menu.dart';
-import 'package:order_food/screens/restaurant_home_details.dart';
+import 'menu.dart';
+import 'restaurant_home_details.dart';
 
 class RestaurantHome extends StatelessWidget {
   final drawerZoomController = ZoomDrawerController();

@@ -5,13 +5,12 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/screens/place_order.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/cart_string.dart';
-import 'package:order_food/utils/utils.dart';
-import 'package:order_food/view_model/cart_mv/cart_view_model_imp.dart';
-import 'package:order_food/widget/cart/cart_total_item_widget.dart';
+import '../state/cart_state.dart';
+import '../state/main_state.dart';
+import '../strings/cart_string.dart';
+import '../utils/utils.dart';
+import '../view_model/cart_mv/cart_view_model_imp.dart';
+import '../widget/cart/cart_total_item_widget.dart';
 
 class CartDetailScreen extends StatelessWidget {
   final CartStateController controller = Get.find();

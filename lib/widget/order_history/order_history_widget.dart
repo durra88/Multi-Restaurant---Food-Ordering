@@ -1,9 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
-import '../../model/order_model.dart';
 import '../../state/main_state.dart';
 import '../../strings/order_history_string.dart';
 import '../../view_model/order_history_vm/order_history_view_model_imp.dart';
@@ -17,34 +15,36 @@ class OrderHistoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var  lst;
-    return  FutureBuilder(
-        future: vm.getUserHistory( mainStateController.selectedRestaurant.value.restaurantId!,orderStatusMode),
+    var lst;
+    return FutureBuilder(
+        future: vm.getUserHistory(
+            mainStateController.selectedRestaurant.value.restaurantId!,
+            orderStatusMode),
         builder: (context, snapshot) {
- log("-------------${mainStateController.selectedRestaurant.value.restaurantId}");
+          log("-------------${snapshot.toString()}");
 
-
-           if (snapshot.connectionState == ConnectionState.waiting) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
               child: CircularProgressIndicator(),
             );
-          } else  if(snapshot.data== null){
-             return Center(child: Text("data is null"),);
-           }
-
-           lst = snapshot.data ;
-           if(lst.length==0){
-               print("lengths***************************************************${lst.length}");
-              return Center(child: Text(emptyText),);
-            }
-
-          //  print("lengths***************************************************${lst.toString().length}");
-           return     OrderHistoryListWidget(
-              listOrder: lst,
+          } else if (snapshot.data == null) {
+            return Center(
+              child: Text("data is null"),
             );
           }
-        );
+
+          lst = snapshot.data;
+          if (lst.length == 0) {
+         //   print(               "lengths***************************************************${lst.length}");
+            return Center(
+              child: Text(emptyText),
+            );
+          }
+
+          //  print("lengths***************************************************${lst.toString().length}");
+          return OrderHistoryListWidget(
+            listOrder: lst,
+          );
+        });
   }
-
-
 }

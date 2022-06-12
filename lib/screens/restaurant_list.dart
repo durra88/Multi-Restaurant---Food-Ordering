@@ -1,21 +1,22 @@
 import 'dart:convert';
+
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:order_food/model/cart_model.dart';
-import 'package:order_food/model/restaurent_model.dart';
-import 'package:order_food/screens/restaurant_home.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/strings/main_strings.dart';
-import 'package:order_food/utils/const.dart';
-import 'package:order_food/view_model/main_vm/main_view_model_imp.dart';
-import 'package:order_food/widget/common/common_widgets.dart';
-import 'package:order_food/widget/main/main_widgets.dart';
+
+import '../model/cart_model.dart';
+import '../model/restaurent_model.dart';
+import '../state/cart_state.dart';
+import '../state/main_state.dart';
+import '../strings/main_strings.dart';
+import '../utils/const.dart';
+import '../view_model/main_vm/main_view_model_imp.dart';
+import '../widget/common/common_widgets.dart';
+import '../widget/main/main_widgets.dart';
+import 'restaurant_home.dart';
 
 class RestaurentListScreen extends StatefulWidget {
   final FirebaseApp app;
@@ -31,7 +32,7 @@ class RestaurentListScreen extends StatefulWidget {
 }
 
 class _RestaurentListScreenState extends State<RestaurentListScreen> {
-   @override
+  @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (widget.box.hasData(MY_CART_KEY)) {

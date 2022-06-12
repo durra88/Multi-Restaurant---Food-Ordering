@@ -1,5 +1,5 @@
-import 'package:order_food/model/order_model.dart';
-import 'package:order_food/state/cart_state.dart';
+import '../../model/order_model.dart';
+import '../../state/cart_state.dart';
 
 abstract class ProcessOrderViewModel {
   Future<bool> submitOrder(OrderModel orderModel);

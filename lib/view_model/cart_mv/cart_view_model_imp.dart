@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:order_food/model/cart_model.dart';
-import 'package:order_food/screens/place_order.dart';
-import 'package:order_food/state/cart_state.dart';
-import 'package:order_food/state/main_state.dart';
-import 'package:order_food/view_model/cart_mv/cart_view_model.dart';
-import 'package:order_food/view_model/menu_vm/menu_viewmodel_imp.dart';
+import '../../model/cart_model.dart';
+import '../../screens/place_order.dart';
+import '../../state/cart_state.dart';
+import '../../state/main_state.dart';
+import 'cart_view_model.dart';
+import '../menu_vm/menu_viewmodel_imp.dart';
 
 class CartViewModelImp implements CartViewModel {
   final MainStateController mainStateController = Get.find();

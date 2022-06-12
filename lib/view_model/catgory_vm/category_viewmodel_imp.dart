@@ -1,6 +1,5 @@
-import 'package:order_food/firebase/category_reference.dart';
-import 'package:order_food/model/category_model.dart';
-
+import '../../firebase/category_reference.dart';
+import '../../model/category_model.dart';
 import 'category_viewmodel.dart';
 
 class CategoryViewModelImp implements CategoryViewModel {

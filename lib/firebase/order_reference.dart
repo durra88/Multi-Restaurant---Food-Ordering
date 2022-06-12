@@ -3,8 +3,8 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:order_food/const/const.dart';
-import 'package:order_food/model/order_model.dart';
+import '../const/const.dart';
+import '../model/order_model.dart';
 
 Future<bool> writeOrderToFirebase(OrderModel orderModel) async {
   try {
@@ -33,15 +33,13 @@ Future<List<OrderModel>> getUserOrdersByRestaurant(
       .child(RESTAURANT_REF)
       .child(restaurantId)
       .child(ORDER_REF)
-     // .child("userId")
-      // .orderByChild('userId')
-      // .equalTo('userId')
+    
       .once();
   var values = source.snapshot;
   values.children.forEach((element) {
     list.add(OrderModel.fromJson(jsonDecode(jsonEncode(element.value))));
   });
-  log("user id$userId");
+  //log("user id$userId");
   if (values.exists) {
     print(
         "*****************has DATA**********************************${values.value}");

@@ -1,6 +1,7 @@
 import 'package:get/state_manager.dart';
-import 'package:order_food/model/cart_model.dart';
-import 'package:order_food/model/order_model.dart';
+
+import '../model/cart_model.dart';
+import '../model/order_model.dart';
 
 class OrderHistoryController extends GetxController {
   var selectedOrder = new OrderModel(

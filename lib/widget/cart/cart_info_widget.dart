@@ -1,34 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../model/cart_model.dart';
 import '../../state/cart_state.dart';
-import '../../utils/utils.dart';
+import '../../state/main_state.dart';
 
 class CartInfoWidget extends StatelessWidget {
-  final CartStateController controller;
-  final CartModel cartModel;
   const CartInfoWidget(
-      {Key? key, required this.controller, required this.cartModel})
+      {Key? key,
+      required this.controller,
+      required this.mainStateController,
+      required this.price,
+      required this.name})
       : super(key: key);
+
+  final CartStateController controller;
+  final MainStateController mainStateController;
+  final String price, name;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(cartModel.name!,
-                style: GoogleFonts.jetBrainsMono(
-                    fontSize: 16, fontWeight: FontWeight.bold),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis),
-          ),
-          Padding(
+    return Expanded(
+      flex: 6,
+      child: Container(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(name,
+                  style: GoogleFonts.jetBrainsMono(
+                      fontSize: 16, fontWeight: FontWeight.bold),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis),
+            ),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
@@ -42,17 +49,16 @@ class CartInfoWidget extends StatelessWidget {
                   SizedBox(
                     width: 4,
                   ),
-                  Text(
-                      currencyFormat.format(
-                        cartModel.price.toString(),
-                      ),
+                  Text(price,
                       style: GoogleFonts.jetBrainsMono(
                           fontSize: 16, fontWeight: FontWeight.bold),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis),
                 ],
-              )),
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

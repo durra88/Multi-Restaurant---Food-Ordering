@@ -1,19 +1,14 @@
 import 'dart:developer';
 
-import 'package:auto_animated/auto_animated.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../const/const.dart';
 import '../model/category_model.dart';
 import '../state/category_state.dart';
 import '../state/main_state.dart';
 import '../view_model/catgory_vm/category_viewmodel_imp.dart';
+import '../widget/category/category_list_widget.dart';
 import '../widget/common/appbar_with_cart_widget.dart';
-import '../widget/common/common_widgets.dart';
-import 'food_list.dart';
 
 class CategoryScreen extends StatelessWidget {
   @override
@@ -33,11 +28,6 @@ class CategoryScreen extends StatelessWidget {
         builder: (context, snapshot) {
           log("category----------${snapshot.toString()}");
 
-          // if (snapshot.data == null)
-          //   return Center(
-          //     child: Text("empty"),
-          //   );
-
           if (snapshot.connectionState == ConnectionState.waiting)
             return Center(
               child: CircularProgressIndicator(),
@@ -50,58 +40,9 @@ class CategoryScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(
-                        child: LiveGrid(
-                      showItemDuration: Duration(milliseconds: 300),
-                      showItemInterval: Duration(milliseconds: 300),
-                      reAnimateOnVisibility: true,
-                      scrollDirection: Axis.vertical,
-                      itemCount: lst.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 1,
-                          mainAxisSpacing: 1),
-                      itemBuilder: animationItemBuilder((index) => InkWell(
-                            onTap: () {
-                              categoryStateController.selectedCategory.value =
-                                  lst[index];
-                              print(
-                                  'food ${categoryStateController.selectedCategory.value.foods}');
-                              Get.to(() => FoodListScreen());
-                            },
-                            child: Card(
-                              semanticContainer: true,
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              child: Stack(
-                                fit: StackFit.expand,
-                                children: [
-                                  CachedNetworkImage(
-                                    imageUrl: lst[index].image!,
-                                    fit: BoxFit.cover,
-                                    errorWidget: (context, url, error) =>
-                                        Center(
-                                      child: Icon(Icons.image),
-                                    ),
-                                    progressIndicatorBuilder:
-                                        (context, url, progress) => Center(
-                                      child: CircularProgressIndicator(),
-                                    ),
-                                  ),
-                                  Container(color: Color(COLOR_OVERLAY)),
-                                  Center(
-                                    child: Text(
-                                      '${lst[index].name}',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.jetBrainsMono(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )),
-                    ))
+                        child: CartListWidget(
+                            lst: lst,
+                            categoryStateController: categoryStateController))
                   ],
                 ));
           }

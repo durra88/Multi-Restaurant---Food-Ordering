@@ -6,13 +6,14 @@ import '../../state/food_detail_state.dart';
 import '../../state/food_list_state.dart';
 
 class FoodDetailNameWidget extends StatelessWidget {
+  const FoodDetailNameWidget({
+    Key? key,
+    required this.foodListStateController,
+    required this.foodDetailStateController,
+  }) : super(key: key);
+
   final FoodListStateController foodListStateController;
   final FoodDetailStateController foodDetailStateController;
-  const FoodDetailNameWidget(
-      {Key? key,
-      required this.foodListStateController,
-      required this.foodDetailStateController})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,13 +47,15 @@ class FoodDetailNameWidget extends StatelessWidget {
                   ),
                 ),
                 Obx(() => ElegantNumberButton(
-                    initialValue: foodDetailStateController.quantity.value,
+                    initialValue:
+                        foodDetailStateController.quantity.value,
                     minValue: 1,
                     maxValue: 100,
                     color: Colors.amber,
                     onChanged: (value) {
                       print('clicked $value');
-                      foodDetailStateController.quantity.value = value.toInt();
+                      foodDetailStateController.quantity.value =
+                          value.toInt();
                     },
                     decimalPlaces: 0)),
               ],

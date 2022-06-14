@@ -100,7 +100,8 @@ class _RestaurentListScreenState extends State<RestaurentListScreen> {
                               RestaurantInfoWidget(
                                 name: lst[index].name!,
                                 address: lst[index].address!,
-                              )
+                              ),
+                            
                             ],
                           ),
                         ),

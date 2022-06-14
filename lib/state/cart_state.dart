@@ -10,6 +10,7 @@ import '../utils/const.dart';
 class CartStateController extends GetxController {
   var cart = List<CartModel>.empty(growable: true).obs;
   final box = GetStorage();
+
   List<CartModel> getAnonymousCart(String restaurantId) => cart
       .where((item) =>
           item.restaurantId == restaurantId && item.userUid == KEY_ANONYMOS)
@@ -62,10 +63,10 @@ class CartStateController extends GetxController {
               ? KEY_ANONYMOS
               : FirebaseAuth.instance.currentUser!.uid));
 
-  sumCart(String restaurantId) => getCart(restaurantId).length == 0
+  sumCart(String? restaurantId) => getCart(restaurantId!).length == 0
       ? 0
       : cart
-          .map((e) => e.price* e.quantity!)
+          .map((e) => e.price! * e.quantity!)
           .reduce((value, element) => value + element);
 
   getQuantity(String restaurantId) => getCart(restaurantId).length == 0
@@ -112,13 +113,5 @@ class CartStateController extends GetxController {
                   ? KEY_ANONYMOS
                   : FirebaseAuth.instance.currentUser!.uid));
 
-  /* getCartNeedToUpdate(CartModel cartItem, String restaurantId) {
-    cart.firstWhere((element) =>
-        element.id == cartItem.id &&
-        element.restaurantId == cartItem.restaurantId &&
-        element.userUid ==
-            (FirebaseAuth.instance.currentUser == null
-                ? KEY_ANONYMOS
-                : FirebaseAuth.instance.currentUser!.uid));
-  }*/
+
 }

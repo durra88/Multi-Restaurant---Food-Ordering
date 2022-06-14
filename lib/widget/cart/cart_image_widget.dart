@@ -1,18 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/cart_model.dart';
 import '../../state/cart_state.dart';
 
 class CartImageWidget extends StatelessWidget {
   final CartStateController controller;
-  final CartModel cartModel;
-  const CartImageWidget({Key? key, required this.controller, required this.cartModel}) : super(key: key);
+  final String ImageUrl;
+  const CartImageWidget(
+      {Key? key, required this.controller, required this.ImageUrl})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: cartModel.image!,
+      imageUrl: ImageUrl,
       fit: BoxFit.cover,
       errorWidget: (context, url, error) => Center(
         child: Icon(Icons.image),

@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../state/food_list_state.dart';
 
 class FoodDetailDescriptionWidget extends StatelessWidget {
+  const FoodDetailDescriptionWidget({
+    Key? key,
+    required this.foodListStateController,
+  }) : super(key: key);
+
   final FoodListStateController foodListStateController;
-  const FoodDetailDescriptionWidget(
-      {Key? key, required this.foodListStateController})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

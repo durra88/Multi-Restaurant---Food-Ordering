@@ -26,6 +26,7 @@ Future<bool> writeOrderToFirebase(OrderModel orderModel) async {
 Future<List<OrderModel>> getUserOrdersByRestaurant(
     String restaurantId, String statusMode) async {
   var orderStatusMode = statusMode == ORDER_CANCELEED ? -1 : 2;
+  // ignore: unused_local_variable
   var userId = FirebaseAuth.instance.currentUser?.uid.toString();
   var list = new List<OrderModel>.empty(growable: true);
   var source = await FirebaseDatabase.instance

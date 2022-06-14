@@ -7,6 +7,7 @@ import '../const/const.dart';
 import '../strings/main_strings.dart';
 import '../strings/restaurant_home_string.dart';
 import '../view_model/menu_vm/menu_viewmodel_imp.dart';
+import '../widget/menu/categories_menu_widget.dart';
 import 'order_history.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -44,161 +45,64 @@ class MenuScreen extends StatelessWidget {
             ],
           ),
           Divider(
-            thickness: 1,  color: Colors.red,
+            thickness: 1,
+            color: Colors.red,
           ),
-          InkWell(
+          MenuItemWidget(
+            zoomdRrawerController: zoomdRrawerController,
+            title: homeText,
             onTap: () => zoomdRrawerController.toggle!(),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.home,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    homeText,
-                    style: GoogleFonts.jetBrainsMono(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900),
-                  )
-                ],
-              ),
-            ),
+            icon: Icons.home,
           ),
           Divider(
             thickness: 1,
             color: Colors.red,
           ),
-          InkWell(
+          MenuItemWidget(
+            zoomdRrawerController: zoomdRrawerController,
+            title: restaurentListText,
             onTap: viewModel.backToRestaurantList,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.restaurant_rounded,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    restaurentListText,
-                    style: GoogleFonts.jetBrainsMono(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900),
-                  )
-                ],
-              ),
-            ),
+            icon: Icons.restaurant_rounded,
           ),
           Divider(
-            thickness: 1,  color: Colors.red,
+            thickness: 1,
+            color: Colors.red,
           ),
-          InkWell(
+          MenuItemWidget(
+            zoomdRrawerController: zoomdRrawerController,
+            title: cartText,
             onTap: viewModel.navigateCart,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.shopping_cart_rounded,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    cartText,
-                    style: GoogleFonts.jetBrainsMono(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900),
-                  )
-                ],
-              ),
-            ),
+            icon: Icons.shopping_cart_rounded,
           ),
           Divider(
-            thickness: 1,  color: Colors.red,
+            thickness: 1,
+            color: Colors.red,
           ),
-          InkWell(
+          MenuItemWidget(
+            zoomdRrawerController: zoomdRrawerController,
+            title: categoriesText,
             onTap: viewModel.navigateCategories,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.list,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    categoriesText,
-                    style: GoogleFonts.jetBrainsMono(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900),
-                  ),
-                ],
-              ),
-            ),
+            icon: Icons.list,
           ),
           Divider(
-            thickness: 1,  color: Colors.red,
+            thickness: 1,
+            color: Colors.red,
           ),
-          InkWell(
-
-             onTap: () => Get.to( OrderHistoryScreen()),
-              // viewModel.checkLoginState(context)
-              //     ? viewModel.viewOrderHistory
-              //     : viewModel.login,
-
-
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.history,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    orderHistoryText,
-                    style: GoogleFonts.jetBrainsMono(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900),
-                  ),
-                ],
-              ),
-            ),
+          MenuItemWidget(
+            zoomdRrawerController: zoomdRrawerController,
+            title: orderHistoryText,
+            onTap: () => Get.to(OrderHistoryScreen()),
+            icon: Icons.history,
           ),
           Spacer(),
           Divider(
-            thickness: 1,  color: Colors.red,
+            thickness: 1,
+            color: Colors.red,
           ),
           InkWell(
-              onTap:()=> viewModel.checkLoginState(context)
-                  ? viewModel.logout
-                  : viewModel.login,
-
+            onTap: () => viewModel.checkLoginState(context)
+                ? viewModel.logout
+                : viewModel.login,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -214,9 +118,7 @@ class MenuScreen extends StatelessWidget {
                     width: 30,
                   ),
                   Text(
-                    viewModel.checkLoginState(context)
-                        ? logoutText
-                        : loginText,
+                    viewModel.checkLoginState(context) ? logoutText : loginText,
                     style: GoogleFonts.jetBrainsMono(
                         fontSize: 18,
                         color: Colors.white,
@@ -226,7 +128,9 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
           ),
-     SizedBox(height: 10,)
+          SizedBox(
+            height: 10,
+          )
         ],
       )),
     );

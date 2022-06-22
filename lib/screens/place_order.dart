@@ -32,7 +32,7 @@ class PlaceOrderScreen extends StatelessWidget {
         body: Form(
           key: formKey,
           child: Padding(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.only(top: 20, bottom: 8, left: 8, right: 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -52,7 +52,7 @@ class PlaceOrderScreen extends StatelessWidget {
                           border: OutlineInputBorder()),
                     )),
                     SizedBox(
-                      width: 4,
+                      width: 8,
                     ),
                     Expanded(
                         child: TextFormField(
@@ -70,7 +70,7 @@ class PlaceOrderScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +90,7 @@ class PlaceOrderScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
                 Obx(() => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +118,7 @@ class PlaceOrderScreen extends StatelessWidget {
                       ],
                     )),
                 SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,13 +166,13 @@ class PlaceOrderScreen extends StatelessWidget {
                                   : orderFaildMessageText,
                               textCancel: cancelText,
                               textConfirm: confirmText,
-                              onCancel: (){},
+                              onCancel: () {},
                               confirmTextColor: Colors.yellow,
                               onConfirm: () {
                                 cartStateController.clearCart(
                                     mainStateController.selectedRestaurant.value
                                         .restaurantId!);
-                                      Get.offAll(()=>RestaurantHome());
+                                Get.offAll(() => RestaurantHome());
                               });
                         }
                       },

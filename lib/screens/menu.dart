@@ -49,7 +49,6 @@ class MenuScreen extends StatelessWidget {
             color: Colors.red,
           ),
           MenuItemWidget(
-            zoomdRrawerController: zoomdRrawerController,
             title: homeText,
             onTap: () => zoomdRrawerController.toggle!(),
             icon: Icons.home,
@@ -59,7 +58,6 @@ class MenuScreen extends StatelessWidget {
             color: Colors.red,
           ),
           MenuItemWidget(
-            zoomdRrawerController: zoomdRrawerController,
             title: restaurentListText,
             onTap: viewModel.backToRestaurantList,
             icon: Icons.restaurant_rounded,
@@ -69,7 +67,6 @@ class MenuScreen extends StatelessWidget {
             color: Colors.red,
           ),
           MenuItemWidget(
-            zoomdRrawerController: zoomdRrawerController,
             title: cartText,
             onTap: viewModel.navigateCart,
             icon: Icons.shopping_cart_rounded,
@@ -79,7 +76,6 @@ class MenuScreen extends StatelessWidget {
             color: Colors.red,
           ),
           MenuItemWidget(
-            zoomdRrawerController: zoomdRrawerController,
             title: categoriesText,
             onTap: viewModel.navigateCategories,
             icon: Icons.list,
@@ -89,7 +85,6 @@ class MenuScreen extends StatelessWidget {
             color: Colors.red,
           ),
           MenuItemWidget(
-            zoomdRrawerController: zoomdRrawerController,
             title: orderHistoryText,
             onTap: () => Get.to(OrderHistoryScreen()),
             icon: Icons.history,
@@ -129,7 +124,7 @@ class MenuScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 40,
           )
         ],
       )),

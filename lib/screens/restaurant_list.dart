@@ -73,10 +73,11 @@ class _RestaurentListScreenState extends State<RestaurentListScreen> {
             );
           else {
             var lst = snapshot.data as List<RestaurantModel>;
-
             return Container(
-              margin: const EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 20),
+              height: 10000,
               child: LiveList(
+                  shrinkWrap: true,
                   showItemDuration: Duration(milliseconds: 350),
                   showItemInterval: Duration(milliseconds: 150),
                   reAnimateOnVisibility: true,
@@ -88,21 +89,22 @@ class _RestaurentListScreenState extends State<RestaurentListScreen> {
                               lst[index];
                           Get.to(() => RestaurantHome());
                         },
-                        child: Container(
-                          width: double.infinity,
-                          height:
-                              MediaQuery.of(context).size.height / 2.5 * 1.1,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              RestaurantImageWidget(
-                                  imageUrl: lst[index].imageUrl!),
-                              RestaurantInfoWidget(
-                                name: lst[index].name!,
-                                address: lst[index].address!,
-                              ),
-                            
-                            ],
+                        child: SingleChildScrollView(
+                          child: Container(
+                            width: double.infinity,
+                            height:
+                                MediaQuery.of(context).size.height / 2.6 * 1.1,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                RestaurantImageWidget(
+                                  imageUrl: lst[index].imageUrl!,
+                                  name: lst[index].name!,
+                                  address: lst[index].address!,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ))),

@@ -37,7 +37,7 @@ class MenuViewModelImp implements MenuViewModel {
     var user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       FlutterAuthUi.startUi(
-              items: [AuthUiProvider.email],
+              items: [AuthUiProvider.phone],
               tosAndPrivacyPolicy: TosAndPrivacyPolicy(
                   tosUrl: 'https://google.com',
                   privacyPolicyUrl: 'https://youtube.com'),

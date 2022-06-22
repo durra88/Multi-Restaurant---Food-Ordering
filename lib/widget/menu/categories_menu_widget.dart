@@ -8,12 +8,12 @@ import '../../strings/restaurant_home_string.dart';
 class MenuItemWidget extends StatelessWidget {
   const MenuItemWidget(
       {Key? key,
-      required this.zoomdRrawerController,
+     
       required this.title,
       required this.onTap,required this.icon})
       : super(key: key);
 
-  final ZoomDrawerController zoomdRrawerController;
+ 
   final title;
   final VoidCallback onTap;
   final IconData icon;

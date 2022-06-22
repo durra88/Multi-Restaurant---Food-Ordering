@@ -1,11 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:order_food/model/order_model.dart';
 import '../state/order_history_state.dart';
-import '../strings/cart_string.dart';
-import '../strings/order_history_string.dart';
 import '../utils/utils.dart';
 import '../widget/order_history_detail/order_history_detail_list_widget.dart';
 import '../widget/order_history_detail/order_history_detail_widget.dart';
@@ -38,7 +34,11 @@ class OrderViewDetailScreen extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            OrderHistoryDetailWidget(orderModel: orderModel, chipBackgroundColor: chipBackgroundColor, chipForegroundColor: chipForegroundColor, noSymbolUSFormat: noSymbolUSFormat),
+            OrderHistoryDetailWidget(
+                orderModel: orderModel,
+                chipBackgroundColor: chipBackgroundColor,
+                chipForegroundColor: chipForegroundColor,
+                noSymbolUSFormat: noSymbolUSFormat),
             SizedBox(
               height: 10,
             ),
